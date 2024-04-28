@@ -2,7 +2,7 @@ const http= require('http');
 const fs= require('fs');
 const path = require('path');
 const {MongoClient} = require('mongodb');
-const uri ="mongodb+srv://apoorva:apoorva@cluster0.sxy3i0d.mongodb.net/?retryWrites=true&w=majority";
+const uri ="mongodb+srv://mourya:mourya@cluster0.sxy3i0d.mongodb.net/?retryWrites=true&w=majority";
 const client = new MongoClient(uri);
 
 const server   =http.createServer(async(req,res) => {
@@ -39,7 +39,7 @@ if(req.url === '/'){
 else if(req.url=='/api')
 {
 
-    const cursor = client.db("workdb").collection("workcollections").find({});
+    const cursor = client.db("vent").collection("ventcollections").find({});
     const results = await cursor.toArray();
     //console.log(results);
     const js= (JSON.stringify(results));
